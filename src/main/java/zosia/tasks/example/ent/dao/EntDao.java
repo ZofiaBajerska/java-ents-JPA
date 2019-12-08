@@ -4,7 +4,6 @@ import zosia.tasks.example.ent.model.Copse;
 import zosia.tasks.example.ent.model.Ent;
 import zosia.tasks.example.ent.model.Ent_;
 
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -19,18 +18,31 @@ public class EntDao {
         this.emf = emf;
     }
 
-    public List<Ent> findByCopse(Copse copse) {
 
+    public List<Ent> getEntsFromCopse(Copse copse) {
         EntityManager em = emf.createEntityManager();
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<Ent> query = cb.createQuery(Ent.class);
-        Root<Ent> root = query.from(Ent.class);
-        query.select(root).where(cb.equal(root.get(Ent_.copse), copse));
-        List<Ent> list = em.createQuery(query).getResultList();
+        CriteriaBuilder builder = em.getCriteriaBuilder();
+        CriteriaQuery<Ent> query = builder.createQuery(Ent.class);
+        Root<Ent> goblin = query.from(Ent.class);
+        query.where(builder.equal(goblin.get(Ent_.copse), copse));
+        query.select(goblin);
+        List<Ent> goblins = em.createQuery(query).getResultList();
         em.close();
-        return list;
-
+        return goblins;
     }
+
+//    public List<Ent> findByCopse(Copse copse) {
+//
+//        EntityManager em = emf.createEntityManager();
+//        CriteriaBuilder cb = em.getCriteriaBuilder();
+//        CriteriaQuery<Ent> query = cb.createQuery(Ent.class);
+//        Root<Ent> root = query.from(Ent.class);
+//        query.select(root).where(cb.equal(root.get(Ent_.copse), copse));
+//        List<Ent> list = em.createQuery(query).getResultList();
+//        em.close();
+//        return list;
+//
+//    }
 
     public void delete(Ent ent) {
         EntityManager em = emf.createEntityManager();

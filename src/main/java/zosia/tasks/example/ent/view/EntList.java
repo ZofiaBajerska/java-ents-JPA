@@ -36,7 +36,7 @@ public class EntList implements Initializable {
     @FXML
     public void load(ActionEvent actionEvent) {
         ents.clear();
-        ents.addAll(dao.findByCopse(copse));
+        ents.addAll(dao.getEntsFromCopse(copse));
     }
 
     public void delete(ActionEvent actionEvent) {
