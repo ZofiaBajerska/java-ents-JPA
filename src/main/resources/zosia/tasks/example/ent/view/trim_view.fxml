@@ -16,11 +16,11 @@
               AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
               AnchorPane.topAnchor="10.0">
             <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adding Ent"/>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trim Ent"/>
                 <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
                     <children>
-                        <Label alignment="CENTER_RIGHT" minWidth="100.0" text="Name"/>
-                        <TextField fx:id="Trim from:" HBox.hgrow="ALWAYS"/>
+                        <Label alignment="CENTER_RIGHT" minWidth="100.0" text="Trim from:"/>
+                        <TextField fx:id="trimFrom" HBox.hgrow="ALWAYS"/>
                     </children>
                     <padding>
                         <Insets right="30.0"/>
@@ -28,8 +28,8 @@
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
                     <children>
-                        <Label alignment="CENTER_RIGHT" minWidth="100.0" text="Height"/>
-                        <TextField fx:id="Trim to:" HBox.hgrow="ALWAYS"/>
+                        <Label alignment="CENTER_RIGHT" minWidth="100.0" text="Trim to:"/>
+                        <TextField fx:id="trimTo" HBox.hgrow="ALWAYS"/>
                     </children>
                     <padding>
                         <Insets right="30.0"/>
@@ -37,7 +37,7 @@
                 </HBox>
                 <HBox alignment="CENTER_RIGHT">
                     <children>
-                        <Button text="Trim Ent" onAction="#trimEnt"/>
+                        <Button text="Trim Ents" onAction="#trimEnts"/>
                         <Button text="Cancel" onAction="#cancel"/>
                     </children>
                     <opaqueInsets>

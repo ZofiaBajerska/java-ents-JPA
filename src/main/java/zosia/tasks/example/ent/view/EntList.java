@@ -66,12 +66,19 @@ public class EntList implements Initializable {
 
     public void edit(ActionEvent event) {
         try {
-            Navigation.getInstance().showEditEnt(table.getSelectionModel().getSelectedItem());
+            if (table.getSelectionModel().getSelectedItem() != null) {
+                Navigation.getInstance().showEditEnt(table.getSelectionModel().getSelectedItem());
+            }
         } catch (IOException e) {
 
         }
     }
 
     public void trim(ActionEvent actionEvent) {
+        try {
+            Navigation.getInstance().showTrimEnt(copse);
+        } catch (IOException e) {
+
+        }
     }
 }

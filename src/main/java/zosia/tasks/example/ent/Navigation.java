@@ -10,6 +10,7 @@ import zosia.tasks.example.ent.model.Ent;
 import zosia.tasks.example.ent.view.CopseList;
 import zosia.tasks.example.ent.view.EntAddView;
 import zosia.tasks.example.ent.view.EntList;
+import zosia.tasks.example.ent.view.TrimView;
 
 import java.io.IOException;
 
@@ -72,6 +73,19 @@ public class Navigation {
         EntAddView controller = loader.getController();
         controller.setDao(DaoFactory.getInstance().getEntDao());
         controller.setEnt(ent);
+
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+    }
+
+    public void showTrimEnt(Copse copse) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Navigation.class.getResource("/zosia/tasks/example/ent/view/trim_view.fxml"));
+
+        Parent parent = loader.load();
+        TrimView controller = loader.getController();
+        controller.setDao(DaoFactory.getInstance().getEntDao());
+        controller.setCopse(copse);
 
         Scene scene = new Scene(parent);
         stage.setScene(scene);

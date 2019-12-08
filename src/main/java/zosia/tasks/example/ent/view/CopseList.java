@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextInputDialog;
 import lombok.Setter;
 import zosia.tasks.example.ent.Navigation;
 import zosia.tasks.example.ent.dao.CopseDao;
@@ -15,6 +16,8 @@ import zosia.tasks.example.ent.model.Copse;
 
 import java.io.IOException;
 import java.net.URL;
+
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class CopseList implements Initializable {
@@ -57,9 +60,25 @@ public class CopseList implements Initializable {
     }
 
     public void addCopse(ActionEvent actionEvent) {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Add new Copse");
+        dialog.setHeaderText("Enter copse name:");
+        dialog.setContentText("Name:");
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent()){
+            String newName = result.get();
+
+            Copse copse = new Copse(newName);
+            this.copse.add(copse);
+            dao.add(copse);
+        }
     }
 
     public void showEmpty(ActionEvent actionEvent) {
-//        if ()
+        copse.clear();
+        copse.addAll(dao.findEmpty());
+
+
     }
+
 }
