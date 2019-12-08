@@ -71,4 +71,7 @@ public class EntList implements Initializable {
 
         }
     }
+
+    public void trim(ActionEvent actionEvent) {
+    }
 }

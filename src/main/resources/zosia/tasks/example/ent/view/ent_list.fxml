@@ -40,6 +40,7 @@
             <Button text="Back to Copse" onAction="#backToCopse"/>
             <Button text="Add" onAction="#add"/>
             <Button text="Edit" onAction="#edit"/>
+            <Button text="Trim Ent" onAction="#trim"/>
         </HBox>
     </top>
 </BorderPane>

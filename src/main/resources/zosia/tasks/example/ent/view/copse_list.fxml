@@ -13,7 +13,7 @@
     <center>
         <TableView fx:id="table">
             <columns>
-                <TableColumn text="Name">
+                <TableColumn text="Name" minWidth="250">
                     <cellValueFactory>
                         <PropertyValueFactory property="name"/>
                     </cellValueFactory>

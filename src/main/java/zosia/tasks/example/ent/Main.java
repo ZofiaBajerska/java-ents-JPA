@@ -18,18 +18,21 @@ public class Main extends Application implements Closeable {
         EntityManager em = DaoFactory.getInstance().createEntityManager();
         em.getTransaction().begin();
 
-        Copse first = new Copse();
-        first.setName("First");
-        Copse second = new Copse();
-        second.setName("Second");
+        Copse blackCopse = new Copse();
+        blackCopse.setName("Black Copse");
+        Copse redCopse = new Copse();
+        redCopse.setName("Red Copse");
+        Copse greenCopse = new Copse();
+        greenCopse.setName("Green Copse");
 
-        Ent ziutek = new Ent("Ziutek", EntType.WILLOW, 203, first);
-        Ent zbychu = new Ent("Zbychu", EntType.WILLOW, 221, second);
-        Ent zyta = new Ent("Zyta", EntType.BIRCH, 221, first );
-        Ent zuza = new Ent("Zuza", EntType.LARCH, 263, second );
+        Ent ziutek = new Ent("Ziutek", EntType.WILLOW, 203, blackCopse);
+        Ent zbychu = new Ent("Zbychu", EntType.WILLOW, 221, redCopse);
+        Ent zyta = new Ent("Zyta", EntType.BIRCH, 221, blackCopse );
+        Ent zuza = new Ent("Zuza", EntType.LARCH, 263, redCopse );
 
-        em.persist(first);
-        em.persist(second);
+        em.persist(blackCopse);
+        em.persist(redCopse);
+        em.persist(greenCopse);
 
         em.persist(ziutek);
         em.persist(zbychu);
