@@ -19,7 +19,6 @@ import java.util.ResourceBundle;
 
 public class CopseList implements Initializable {
 
-
     @FXML
     private TableView<Copse> table;
 
@@ -61,5 +60,6 @@ public class CopseList implements Initializable {
     }
 
     public void showEmpty(ActionEvent actionEvent) {
+//        if ()
     }
 }

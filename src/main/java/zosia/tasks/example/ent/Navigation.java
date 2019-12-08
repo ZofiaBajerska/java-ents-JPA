@@ -8,6 +8,7 @@ import lombok.Setter;
 import zosia.tasks.example.ent.model.Copse;
 import zosia.tasks.example.ent.model.Ent;
 import zosia.tasks.example.ent.view.CopseList;
+import zosia.tasks.example.ent.view.EntAddView;
 import zosia.tasks.example.ent.view.EntList;
 
 import java.io.IOException;
@@ -49,5 +50,32 @@ public class Navigation {
         Scene scene = new Scene(parent);
         stage.setScene(scene);
     }
+
+    public void showAddEnt(Copse copse) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Navigation.class.getResource("/zosia/tasks/example/ent/view/ent_add_view.fxml"));
+
+        Parent parent = loader.load();
+        EntAddView controller = loader.getController();
+        controller.setDao(DaoFactory.getInstance().getEntDao());
+        controller.setCopse(copse);
+
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+    }
+
+    public void showEditEnt(Ent ent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Navigation.class.getResource("/zosia/tasks/example/ent/view/ent_add_view.fxml"));
+
+        Parent parent = loader.load();
+        EntAddView controller = loader.getController();
+        controller.setDao(DaoFactory.getInstance().getEntDao());
+        controller.setEnt(ent);
+
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+    }
+
 }
 

@@ -57,8 +57,18 @@ public class EntList implements Initializable {
         }
 
     public void add(ActionEvent event) {
+        try {
+            Navigation.getInstance().showAddEnt(copse);
+        } catch (IOException e) {
+
+        }
     }
 
     public void edit(ActionEvent event) {
+        try {
+            Navigation.getInstance().showEditEnt(table.getSelectionModel().getSelectedItem());
+        } catch (IOException e) {
+
+        }
     }
 }

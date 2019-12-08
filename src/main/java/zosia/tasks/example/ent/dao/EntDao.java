@@ -31,6 +31,16 @@ public class EntDao {
         return goblins;
     }
 
+    public void add(Ent ent){
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        ent = em.merge(ent);
+        ent.getCopse().getEnts().add(ent);
+        em.persist(ent);
+        em.getTransaction().commit();
+        em.close();
+    }
+
     public void delete(Ent ent) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
