@@ -15,14 +15,19 @@
     <center>
         <TableView fx:id="table">
             <columns>
-                <TableColumn text="id">
+                <TableColumn text="Ent name">
                     <cellValueFactory>
-                        <PropertyValueFactory property="id"/>
+                        <PropertyValueFactory property="name"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="population">
+                <TableColumn text="Specie">
                     <cellValueFactory>
-                        <PropertyValueFactory property="population"/>
+                        <PropertyValueFactory property="type"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Height">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="height"/>
                     </cellValueFactory>
                 </TableColumn>
             </columns>
@@ -30,8 +35,11 @@
     </center>
     <top>
         <HBox>
-            <Button text="load" onAction="#load"/>
-            <Button text="delete" onAction="#delete"/>
+            <Button text="Load" onAction="#load"/>
+            <Button text="Delete" onAction="#delete"/>
+            <Button text="Back to Copse" onAction="#backToCopse"/>
+            <Button text="Add" onAction="#add"/>
+            <Button text="Edit" onAction="#edit"/>
         </HBox>
     </top>
 </BorderPane>

@@ -7,11 +7,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 import lombok.Setter;
+import zosia.tasks.example.ent.Navigation;
 import zosia.tasks.example.ent.dao.EntDao;
 import zosia.tasks.example.ent.model.Copse;
 import zosia.tasks.example.ent.model.Ent;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -34,13 +36,29 @@ public class EntList implements Initializable {
     }
 
     @FXML
-    public void load(ActionEvent actionEvent) {
+    public void load(ActionEvent event) {
         ents.clear();
         ents.addAll(dao.getEntsFromCopse(copse));
     }
 
     public void delete(ActionEvent actionEvent) {
+        if (table.getSelectionModel().getSelectedItem() != null) {
+            dao.delete(table.getSelectionModel().getSelectedItem());
+            load(actionEvent);
+        }
     }
 
+    public void backToCopse(ActionEvent event) {
+        try {
+                Navigation.getInstance().showCopseList();
+            } catch (IOException e) {
+                //Show popup
+            }
+        }
 
+    public void add(ActionEvent event) {
+    }
+
+    public void edit(ActionEvent event) {
+    }
 }

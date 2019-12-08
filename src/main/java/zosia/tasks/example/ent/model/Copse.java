@@ -17,15 +17,17 @@ import java.util.List;
 @AllArgsConstructor
 public class Copse {
 
-
     @Id
     private String name;
 
     @OneToMany(mappedBy = "copse", fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     private List<Ent> ents = new ArrayList<>();
 
-    public int getEnt() {
+    public int getPopulation(){
         return ents.size();
+    }
+    public Copse(String name) {
+        this.name = name;
     }
 
 }

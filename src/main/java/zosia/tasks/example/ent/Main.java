@@ -24,17 +24,17 @@ public class Main extends Application implements Closeable {
         second.setName("Second");
 
         Ent ziutek = new Ent("Ziutek", EntType.WILLOW, 203, first);
-//        Ent zbychu = new Ent(EntType.WILLOW, "Zbychu", 221, second);
-//        Ent zyta = new Ent(EntType.BIRCH, "Zyta", 221, first );
-//        Ent zuza = new Ent(EntType.LARCH, "Zuza", 263, second );
+        Ent zbychu = new Ent("Zbychu", EntType.WILLOW, 221, second);
+        Ent zyta = new Ent("Zyta", EntType.BIRCH, 221, first );
+        Ent zuza = new Ent("Zuza", EntType.LARCH, 263, second );
 
         em.persist(first);
         em.persist(second);
 
         em.persist(ziutek);
-//        em.persist(zbychu);
-//        em.persist(zyta);
-//        em.persist(zuza);
+        em.persist(zbychu);
+        em.persist(zyta);
+        em.persist(zuza);
 
         em.getTransaction().commit();
         em.close();

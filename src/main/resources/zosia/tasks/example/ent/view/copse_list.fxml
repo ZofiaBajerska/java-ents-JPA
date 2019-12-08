@@ -13,12 +13,12 @@
     <center>
         <TableView fx:id="table">
             <columns>
-                <TableColumn text="name">
+                <TableColumn text="Name">
                     <cellValueFactory>
                         <PropertyValueFactory property="name"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="population">
+                <TableColumn text="Population">
                     <cellValueFactory>
                         <PropertyValueFactory property="population"/>
                     </cellValueFactory>
@@ -28,9 +28,11 @@
     </center>
     <top>
         <HBox>
-            <Button text="load" onAction="#load"/>
-            <Button text="delete" onAction="#delete"/>
-            <Button text="ent" onAction="#showEnts"/>
+            <Button text="Load Copse" onAction="#load"/>
+            <Button text="Delete Copse" onAction="#delete"/>
+            <Button text="Show Ent" onAction="#showEnts"/>
+            <Button text="Add Copse" onAction="#addCopse"/>
+            <Button text="Show Empty Copse" onAction="#showEmpty"/>
         </HBox>
     </top>
 

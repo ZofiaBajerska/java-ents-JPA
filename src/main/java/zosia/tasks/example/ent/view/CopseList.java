@@ -56,4 +56,10 @@ public class CopseList implements Initializable {
             }
         }
     }
+
+    public void addCopse(ActionEvent actionEvent) {
+    }
+
+    public void showEmpty(ActionEvent actionEvent) {
+    }
 }

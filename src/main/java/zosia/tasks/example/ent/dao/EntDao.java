@@ -31,26 +31,13 @@ public class EntDao {
         return goblins;
     }
 
-//    public List<Ent> findByCopse(Copse copse) {
-//
-//        EntityManager em = emf.createEntityManager();
-//        CriteriaBuilder cb = em.getCriteriaBuilder();
-//        CriteriaQuery<Ent> query = cb.createQuery(Ent.class);
-//        Root<Ent> root = query.from(Ent.class);
-//        query.select(root).where(cb.equal(root.get(Ent_.copse), copse));
-//        List<Ent> list = em.createQuery(query).getResultList();
-//        em.close();
-//        return list;
-//
-//    }
-
     public void delete(Ent ent) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         ent = em.merge(ent);
-//        ent.getCopse().getEnt().remove(ent);
+        ent.getCopse().getEnts().remove(ent);
         em.remove(ent);
         em.getTransaction().commit();
+        em.close();
     }
-
 }

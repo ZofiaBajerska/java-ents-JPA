@@ -17,8 +17,6 @@ import javax.persistence.ManyToOne;
 @AllArgsConstructor
 public class Ent {
 
-
-
     @Id
     private String name;
 
