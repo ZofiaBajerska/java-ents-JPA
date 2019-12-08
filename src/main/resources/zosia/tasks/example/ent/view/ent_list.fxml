@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="zosia.tasks.example.ent.view.EntList"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <center>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn text="id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="population">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="population"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+    <top>
+        <HBox>
+            <Button text="load" onAction="#load"/>
+            <Button text="delete" onAction="#delete"/>
+        </HBox>
+    </top>
+</BorderPane>
